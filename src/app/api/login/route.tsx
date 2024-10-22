@@ -37,7 +37,7 @@ export async function POST(req: Request) {
         const token = jwt.sign(
             { id: user.id, email: user.email },
             process.env.JWT_SECRET as string,
-            { expiresIn: '1h' }
+            { expiresIn: '60m' }
         );
 
     
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
             secure: process.env.NODE_ENV === 'production', 
             maxAge: 3600, 
             path: '/',
-            sameSite: 'strict',
+            sameSite: 'lax',
         });
 
    

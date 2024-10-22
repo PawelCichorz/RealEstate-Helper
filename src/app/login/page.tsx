@@ -1,6 +1,7 @@
 'use client';
-import React from 'react';
+import React ,{useState} from 'react';
 import {  useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
 
 type FormData = {
     password: string;
@@ -9,6 +10,9 @@ type FormData = {
   };
 
 export default function Login() {
+  const [err,Seterr] =useState<string>()
+
+  const router = useRouter();
  
 
     const { register, handleSubmit, formState: { errors },reset } = useForm<FormData>();
@@ -35,8 +39,10 @@ export default function Login() {
           console.log('JWT Token:', responseData.token);
     
           reset();
+          router.push('/main');
         } catch (error) {
           console.error('Error registering user:', error);
+          Seterr('Wystąpił błąd podczas logowania')
         }
       };
 
@@ -65,8 +71,8 @@ export default function Login() {
           })}
         />
         {errors.password && <p>{errors.password.message}</p>}
-  
-        <button type="submit"  className='m-4 border-2 px-8 py-4 text-2xl border-red-500' >Submit</button>
+  {err}
+        <button type="submit"  className='m-4 border-2 px-8 py-4 text-2xl border-red-500' >Zaloguj</button>
       </form>
     );
   

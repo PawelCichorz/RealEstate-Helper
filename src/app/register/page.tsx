@@ -1,6 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import {  useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
 
 type FormData = {
     password: string;
@@ -9,9 +10,11 @@ type FormData = {
   };
 
 export default function Register() {
+    const router = useRouter();
  
 
     const { register, handleSubmit, formState: { errors },reset } = useForm<FormData>();
+    const [err,Seterr] =useState<string>()
 
     const onSubmit = async (data: FormData) => {
         
@@ -31,9 +34,12 @@ export default function Register() {
 
             const responseData = await response.json();
             console.log('User registered:', responseData);
+           
             reset();
+            router.push('/login');
         } catch (error) {
             console.error('Error registering user:', error);
+            Seterr("Wystąpił błąd w rejestracji użytkownika")
         }
     };
 
@@ -62,8 +68,8 @@ export default function Register() {
           })}
         />
         {errors.password && <p>{errors.password.message}</p>}
-  
-        <button type="submit"  className='m-4 border-2 px-8 py-4 text-2xl border-red-500' >Submit</button>
+  {err}
+        <button type="submit"  className='m-4 border-2 px-8 py-4 text-2xl border-red-500' >Zarejestruj</button>
       </form>
     );
   
