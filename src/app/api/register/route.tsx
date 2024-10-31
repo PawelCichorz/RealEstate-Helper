@@ -9,22 +9,22 @@ const pool = new Pool({
 export async function POST(req: Request) {
     const { email, password } = await req.json();
   
-    // Walidacja
+ 
     if (!email || !password) {
       return NextResponse.json({ error: 'Email and password are required' }, { status: 400 });
     }
   
-    // Walidacja formatu e-maila
+    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
     }
   
-    // Haszowanie hasła
+
     const hashedPassword = await bcrypt.hash(password, 10);
   
     try {
-      // Dodawanie użytkownika do bazy danych
+    
       const result = await pool.query(
         'INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *',
         [email, hashedPassword]

@@ -35,5 +35,5 @@ console.log(process.env.JWT_SECRET)
 }
 
 export const config = {
-    matcher: ['/main'], 
+    matcher: ['/main','/list'], 
 };
