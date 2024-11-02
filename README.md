@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Real Estate Management Application
 
-## Getting Started
+This is an innovative project designed specifically for real estate agents, built with Next.js. The application features a frontend that connects seamlessly with a REST API, providing a secure and efficient platform for managing property listings.
 
-First, run the development server:
+## Features
 
-```bash
+- **Secure Registration and Login**: The application fully supports secure user registration and login, ensuring that all user data is protected.
+- **Property Management**: After logging in, users can easily add essential information about properties available for sale. 
+- **Property List**: Users have access to a list of their properties, allowing them to view, delete, or generate PDFs for their listings.
+- **Token-Based Authentication**: The app employs JWT (JSON Web Tokens) for secure authentication, enhancing overall security and user experience.
+- **Database Integration**: Utilizes PostgreSQL to manage and store property data effectively.
+
+## Technologies Used
+
+- **Secure Registration and Login**: The application fully supports secure user registration and login, ensuring that all user data is protected.
+- **Property Management**: After logging in, users can easily add essential information about properties available for sale. 
+- **Property List**: Users have access to a list of their properties, allowing them to view, delete, or generate PDFs for their listings.
+- **Token-Based Authentication**: The app employs JWT (JSON Web Tokens) for secure authentication, enhancing overall security and user experience.
+- **Database Integration**: Utilizes PostgreSQL to manage and store property data effectively.
+- **PDF Generation**: Integrates with **jsPDF** to generate downloadable PDFs of property listings, making it easy for users to present their properties professionally.
+
+- 
+## How to run App 
+git clone  https://github.com/PawelCichorz/RealEstate-Helper.git
+npm install
+In the backend directory, create a .env file and add the following variables:
+
+DATABASE_URL=your_database_url  # Replace with your Postgresql URL
+JWT_SECRET=your_jwt_secret  # Replace with a secure JWT secret
+
+npm start
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Functionality
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The Real Estate Management Application provides a comprehensive suite of features for real estate agents, allowing them to manage property listings efficiently. The key functionalities include:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **User Registration**: Users can create a new account by providing necessary details, enabling them to access the application's features securely.
 
-## Learn More
+- **User Login**: Registered users can log in using their credentials. The application employs secure authentication practices to protect user information.
 
-To learn more about Next.js, take a look at the following resources:
+- **Middleware Protection**: The application includes middleware that verifies user tokens to protect certain routes, ensuring that only authenticated users can access sensitive functionalities.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Dynamic Question Handling**: Upon selecting a property type, users are presented with a set of predefined questions tailored to the selected type (e.g., Apartment, House, Land, or Commercial Space). This dynamic questionnaire allows users to provide detailed information about properties.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Adding New Properties**: Users can add new properties by answering a series of questions generated based on their selected property type. The application collects and organizes this information for further processing.
 
-## Deploy on Vercel
+- **Viewing and Managing Listings**: Users can view their submitted property listings in a dedicated list format, with options to delete or modify existing entries.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **PDF Generation**: The application uses **jsPDF** to generate and download PDF documents containing property details, allowing users to present their listings in a professional format.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Logout Functionality**: Users can securely log out from their sessions, ensuring that their accounts remain protected.
+
+- **Property Deletion**: Users have the ability to delete their property listings from the database, ensuring they can manage their entries efficiently.
+
+This functionality makes the application a valuable tool for real estate professionals, enhancing their ability to manage properties and streamline their workflows.
+
+
+## Author
+Pawel cichorz pawelcichorz74@gmail.com
