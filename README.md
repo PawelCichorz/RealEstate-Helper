@@ -12,14 +12,12 @@ This is an innovative project designed specifically for real estate agents, buil
 
 ## Technologies Used
 
-- **Secure Registration and Login**: The application fully supports secure user registration and login, ensuring that all user data is protected.
-- **Property Management**: After logging in, users can easily add essential information about properties available for sale. 
-- **Property List**: Users have access to a list of their properties, allowing them to view, delete, or generate PDFs for their listings.
-- **Token-Based Authentication**: The app employs JWT (JSON Web Tokens) for secure authentication, enhancing overall security and user experience.
-- **Database Integration**: Utilizes PostgreSQL to manage and store property data effectively.
-- **PDF Generation**: Integrates with **jsPDF** to generate downloadable PDFs of property listings, making it easy for users to present their properties professionally.
+-Next.js: A React-based framework that enables building web applications with server-side rendering. Next.js improves page load times and SEO, providing a smoother user experience.
+-PostgreSQL: A relational database that ensures reliable and efficient data management. It allows for secure storage and management of real estate information in an organized manner.
+-Tailwind CSS: A utility-first CSS framework that enables rapid development of responsive and aesthetic user interfaces. It allows for easy style customization without the need to write custom CSS.
+-JWT (JSON Web Tokens): A standard method for user authentication that securely transmits data between client and server. Used in this project for authorization and session management.
+-jsPDF: A JavaScript library for generating PDF files directly in web browsers. In this project, it's used to create professional PDF documents containing detailed property listings.
 
-- 
 ## How to run App 
 git clone  https://github.com/PawelCichorz/RealEstate-Helper.git
 npm install
