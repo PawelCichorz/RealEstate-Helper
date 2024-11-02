@@ -42,7 +42,7 @@ export default function EstateDetailsPage() {
         doc.addFont('Poppins-Regular.ttf', 'Poppins', 'normal');
         doc.setFont('Poppins');
         doc.setFontSize(16);
-        doc.text(`Szczegóły nieruchomości: ${estate.answers.find(ans => ans.question === 'Podaj nazwe')?.answer || 'Brak nazwy'}`, 10, 20);
+        doc.text(` ${estate.answers.find(ans => ans.question === 'Podaj nazwe')?.answer || 'Brak nazwy'}`, 10, 20);
 
         doc.setFontSize(12);
         let y = 30;
@@ -57,7 +57,7 @@ export default function EstateDetailsPage() {
 
     return (
         <div className='flex items-center justify-center flex-col text-center'>
-            <h1 className='text-xl font-bold'>Szczegóły nieruchomości: {estate.answers.find(ans => ans.question === 'Podaj nazwe')?.answer || 'Brak nazwy'}</h1>
+            <h1 className='text-xl font-bold'>{estate.answers.find(ans => ans.question === 'Podaj nazwe')?.answer || 'Brak nazwy'}</h1>
             <ul className='m-4'>
                 {estate.answers.map((item, index) => (
                     <li className='p-2' key={index}>

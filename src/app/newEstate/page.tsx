@@ -121,7 +121,7 @@ const NewEstate: React.FC = () => {
     }
 
     return (
-        <div className="max-w-2xl mx-auto p-4">
+        <div className="max-w-2xl mx-auto p-4 flex justify-center flex-col items-center text-center">
             <h1 className="text-3xl font-bold mb-6">Dodaj Nieruchomość</h1>
             <div className="bg-white shadow-md rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4">{questions[currentQuestion]?.question_text}</h2>
