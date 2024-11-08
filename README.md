@@ -21,11 +21,16 @@ This is an innovative project designed specifically for real estate agents, buil
 
 ## How to run App 
 --git clone  https://github.com/PawelCichorz/RealEstate-Helper.git
+
 --cd "RealEstate-Helper"
+
 --npm install
+
 --In the backend directory, create a .env file and add the following variables:
+
 DATABASE_URL=your_database_url  # Replace with your Postgresql URL
 JWT_SECRET=your_jwt_secret  # Replace with a secure JWT secret
+
 --npm run dev
 
 ## Functionality
